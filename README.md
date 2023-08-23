@@ -22,10 +22,6 @@ Quick deploy
 
 Grafana Loki é um agregador de logs projetado para ser bem econômico, facilmente escalável e inspirado prometheus. Ele não indexa o conteúdo dos logs, mas sim um conjunto de rótulos para cada fluxo de log.
 
-O Loki adota uma abordagem única ao indexar apenas os metadados em vez do texto completo das linhas de log:
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/45cfccca-55c1-4326-92bb-c4a263cb4b0e/Untitled.png)
-
 Com isso, há um ganho enorme de tempo desde sua entrada, processamento, envio para um storage (s3, blob, minIO…) e futuramente consultas utilizando sua linguagem LogQL, todo esse ciclo de vida é feito de forma mais rápida.
 
 ### **Modelos de deploy**
@@ -33,10 +29,6 @@ Com isso, há um ganho enorme de tempo desde sua entrada, processamento, envio p
 Anteriormente havíamos utilizando docker-compose como nosso modelo de deploy, contudo, para padronizar o modelo com os modelos das demais ferramentas da nossa stack, optamos com realizar o deploy via helm chart.
 
 Dentre as opções de arquitetura encontradas na documentação, escolhemos a de microsserviços, onde cada componente do Grafana Loki é gerenciado separadamente, possuindo suas próprias regras de escalonamento.  [Deployment modes |  Grafana Loki documentation](https://grafana.com/docs/loki/latest/fundamentals/architecture/deployment-modes/)
-
-### **Modo de microsserviços**
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/387147b9-e06f-40d5-a7e7-bada156fcf38/Untitled.png)
 
 Arquitetura: Microservices Mode
 
